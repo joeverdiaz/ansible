@@ -4,12 +4,14 @@
   tasks:
     - name: Launch instance
       ec2:
-         key_name: ansible
+         key_name: testkey
          group: ansible-node
          instance_type: t2.micro
-         image: ami-49f0762d
+         image: ami-07b4156579ea1d7ba
          wait: true
-         region: ca-central-1
+         region: us-east-1
+         aws_access_key: "AKIAIT7DCKVQ3QB4IXKA"
+         aws_secret_key: "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"
 
       register: ec2
     - name: Print all ec2 variables
