@@ -1,0 +1,17 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+      - name: create a security group in us-east-1
+        ec2_group:
+          name: dmz
+          description: an example ec2 group
+          region: us-east-1
+          aws_access_key: "AKIAIT7DCKVQ3QB4IXKA"
+          aws_secret_key: "08so8e2q5QILM07dgz8AKJPLSQ5U2a+vNpz/5niZ"
+          rules:
+            - proto: tcp
+              from_port: 80
+              to_port: 80
+              cidr_ip: 0.0.0.0/0
+        register: security_group
