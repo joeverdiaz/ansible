@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  tasks:
-  - name: install yum
-
-  - name: install a httpd pkg
-    yum: name=httpd state=latest
-  - name: start  a httpd service
-    service: name=httpd state=restarted
