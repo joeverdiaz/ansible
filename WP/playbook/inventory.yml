@@ -1,9 +1,0 @@
-[webserver]
-10.233.150.190
-
-[dbserver]
-10.233.151.210
-
-[all:children]
-webserver
-dbserver
