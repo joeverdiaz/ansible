@@ -5,7 +5,7 @@
   - name: launching ec2
     ec2:
       instance:_type: t2.micro
-      key_name: webserver
+      key_name: ansiblekey
       image: ami-024a64a6685d05041
       region: us-east-1
       group: default

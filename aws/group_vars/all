@@ -1,0 +1,14 @@
+ec2:
+  region: us-east-1
+  credentials: ansiblekey
+  image: ami-07b4156579ea1d7ba
+  sg: allowssh
+  instance_type: t2.micro
+  subnet: subnet-0280daabeff24e371
+  public_ip: yes
+  tags:
+    Name:ec2ansible
+  volumes:
+    device_name: /dev/xvda
+    volume_type: standard
+    volume_size: 8
