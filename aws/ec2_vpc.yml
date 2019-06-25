@@ -7,7 +7,7 @@
 # We are using the variables set in the vars.yml file.
 # The module gives us back its result,
 # which contains information about our new VPC.
-# We regi ster it in the variable my_vpc.
+# We register it in the variable my_vpc.
 
 - name:               Create VPC
   ec2_vpc_net:

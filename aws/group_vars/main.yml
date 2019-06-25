@@ -1,7 +1,7 @@
 ec2:
   region: us-east-1
   credentials: ansiblekey
-  image: ami-07b4156579ea1d7ba
+  image: ami-024a64a6685d05041
   sg: allowssh
   instance_type: t2.micro
   subnet: subnet-0325be2a7c648d659
