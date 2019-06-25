@@ -1,0 +1,6 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - ec2
+    - apache
+  tags: ec2_create
