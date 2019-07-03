@@ -1,0 +1,20 @@
+- name: install apache
+  yum:
+    name: apache2
+    state: present
+
+- name: Enable mod rewrite
+  apache2_module:
+    state: present
+    name: rewrite
+
+- name: enable the use of .htaccess files in any projects
+    copy:
+     src: enable_htaccess.conf
+     dest: /etc/apache2/sites-available/enable_htaccess.conf
+
+- name: enable the .htaccess vhost
+  file:
+    src: /etc/apache2/sites-available/enable_htaccess.conf
+    dest: /etc/apache2/sites-enabled/enable_htaccess.conf
+    state: link

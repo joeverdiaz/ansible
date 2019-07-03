@@ -1,0 +1,12 @@
+# AWS Credentials
+aws_region:          "us-east-1"
+
+# VPC Information
+vpc_name:            "Cleo VPC"
+vpc_cidr_block:      "10.0.0.0/16"
+
+# For Security Group Rule
+trusted_ip_cidr:     "0.0.0.0/0"
+
+# Subnets
+public_subnet_cidr:  "10.0.1.0/24"

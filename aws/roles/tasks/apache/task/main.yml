@@ -1,12 +1,31 @@
-- name: Installing Latest version of Apache
-  yum: pkg=httpd state=latest
-- name: Copying the demo file
-  template: src=/etc/ansible/index.html dest=/var/www/html
-  owner=apache group=apache mode=0644
-- name: (Enable it on System Boot)
-  service: name=httpd enabled=yes
-    notify:
-      - start apache
-  handlers:
-    - name: start apache
-      service: name=httpd state=started
+package_upgrade: true
+packages:
+  - apache2
+  - php-mysql
+  - libapache2-mod-php7.2
+  - mysql-client
+  - wordpress
+write_files:
+  - owner: root:root
+    path: /root/.my.cnf
+    content: |
+      [client]
+      user=wadee@wadeedb
+      password=SHAWNsotto123!
+  - owner: root:root
+    path: /etc/wordpress/config-localpoc.php
+    content: |
+      <?php
+      define ('DB_NAME', 'wordpress');
+      define ('DB_USER', 'wadee@wadeedb');
+      define ('DB_PASSWORD', 'SHAWNsotto123!');
+      define ('DB_HOST', 'wadeedb.mysql.database.azure.com');
+      define ('WP_CONTENT_DIR', '/usr/share/wordpress/wp-content');
+      ?>
+runcmd:
+  - service apache2 restart
+  - sudo echo "<?php phpinfo(); ?>" > /var/www/html/info.php
+  - sudo echo "CREATE DATABASE IF NOT EXISTS wordpress;" > /home/azureuser/db.sql
+  - sudo mysql -h wadeedb.mysql.database.azure.com < /home/azureuser/db.sql
+  - ln -s /usr/share/wordpress /var/www/html/wordpress
+  - mv /etc/wordpress/config-localpoc.php /etc/wordpress/config-default.php
