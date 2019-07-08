@@ -1,6 +1,5 @@
 import os
 import shutil
-
 path = "/home/python/"
 names = os.listdir(path)
 folder_name = ['music','video','file','picture']
