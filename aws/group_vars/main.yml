@@ -1,10 +1,10 @@
 ec2:
   region: us-east-1
-  credentials: ansiblekey
-  image: ami-024a64a6685d05041
+  credentials: keypair
+  image: ami-026c8acd92718196b
   sg: sg
   instance_type: t2.micro
-  subnet: subnet-0238141fd7218f1e9
+  subnet: subnet-09456dc48a52c32c5
   public_ip: yes
   tags:
     Name:ec2ansible
