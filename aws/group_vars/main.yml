@@ -4,7 +4,7 @@ ec2:
   image: ami-026c8acd92718196b
   sg: sg
   instance_type: t2.micro
-  subnet: subnet-09456dc48a52c32c5
+  subnet: subnet-0406efc345d8041f1
   public_ip: yes
   tags:
     Name:ec2ansible

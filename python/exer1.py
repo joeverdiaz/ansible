@@ -5,11 +5,11 @@ from pathlib import Path as path_
 files = ["files.txt", "music.mp3", "video.mp4", "image1.png", "image2.jpeg"]
 dirs = ["Music", "Videos", "Pictures"]
 
-create directory
+#create directory
 for dir_ in dirs:
     os.mkdir(dir_)
 
-#create fils
+#create files
 for file_ in files:
   path_("file_).touch()
   # sort

@@ -1,5 +1,0 @@
----
-- name: install httpd package
-    yum: name:httpd state:latest
-- name: install php package
-    yum: name:php7.2 state:latest

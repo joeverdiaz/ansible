@@ -1,3 +1,0 @@
----
-- name: start and enable httpd service
-  service: name=httpd state=restarted enable=yes
